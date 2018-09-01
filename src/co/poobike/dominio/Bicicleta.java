@@ -1,8 +1,8 @@
 package co.poobike.dominio;
 
 public class Bicicleta {
-	public String color;
-	public String serial;	
+	private String color;
+	private String serial;	
 	private double velocidad;	
 	private int nroCambio;
 	private double cadencia;
@@ -12,11 +12,11 @@ public class Bicicleta {
 	}
 	
 	public Bicicleta(String serial) {
-		this.serial = serial;
+		this(serial, "NINGUNO");
 	}
 	
 	public Bicicleta(String serial, String color) {
-		this(serial);
+		this.serial = serial;
 		this.color = color;
 	}
 	
@@ -35,24 +35,44 @@ public class Bicicleta {
 			this.velocidad -= decremento;
 		}
 	}
+	
+	public int getNroCambio() {
+		return nroCambio;
+	}
 
-	public void modificarCambio(int nuevoCambio) {
-		this.nroCambio = nuevoCambio;
+	public void setNroCambio(int nroCambio) {
+		this.nroCambio = nroCambio;
 	}
 
-	public void modificarCadencia(double nuevaCadencia) {
-		this.cadencia = nuevaCadencia;
+	public double getCadencia() {
+		return cadencia;
+	}
+
+	public void setCadencia(double cadencia) {
+		this.cadencia = cadencia;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public String getSerial() {
+		return serial;
+	}
+
+	public double getVelocidad() {
+		return velocidad;
 	}
 	
-	public String verVelocidad() {
-		return "La bicicleta va a " + this.velocidad  + " km/h";
-	}
 	
-	public String verCambio() {
-		return "La bicicleta va en el cambio #" + this.nroCambio;
-	}
 	
-	public String verCadencia() {
-		return "La bicicleta va a " + this.cadencia  + " pedaleadas por minuto";
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
