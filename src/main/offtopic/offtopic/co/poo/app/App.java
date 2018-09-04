@@ -1,14 +1,14 @@
-package co.poo.app;
+package offtopic.co.poo.app;
 
 import java.util.Arrays;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-import co.poo.dominio.Calculadora;
+import offtopic.co.poo.dominio.Calculadora;
 
 public class App {
-	public static ImageIcon icono = new ImageIcon("/Users/soyalejoramirez/Development/Projects/POOBike/src/co/poobike/resources/github-logo.png");
+	public static ImageIcon icono = new ImageIcon(App.class.getResource("/co/poobike/resources/github-logo.png"));
 	
 	public static void main(String[] args) {
 		Calculadora calculadora = new Calculadora();

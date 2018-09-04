@@ -1,4 +1,4 @@
-package co.poo.app;
+package offtopic.co.poo.app;
 
 import co.poobike.dominio.Bicicleta;
 

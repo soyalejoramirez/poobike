@@ -1,4 +1,4 @@
-package co.poo.dominio;
+package offtopic.co.poo.dominio;
 
 public class Calculadora {
 	public double sumar(double nro1, double nro2) {
