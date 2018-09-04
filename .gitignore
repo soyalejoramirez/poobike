@@ -3,6 +3,7 @@
 *.metadata
 *.classpath
 *.project
+bin/
 
 # Log file
 *.log
