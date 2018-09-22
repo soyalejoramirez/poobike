@@ -8,10 +8,17 @@ import javax.swing.JOptionPane;
 import offtopic.co.poo.dominio.Calculadora;
 
 public class App {
-	public static ImageIcon icono = new ImageIcon(App.class.getResource("/co/poobike/resources/github-logo.png"));
+//	public static ImageIcon icono = new ImageIcon(App.class.getResource("co/poobike/resources/github-logo.png"));
+	public static ImageIcon icono = null;
 	
 	public static void main(String[] args) {
-		Calculadora calculadora = new Calculadora();
+		Calculadora c = new Calculadora("");
+		mostrarMensaje("Instancias: " + Calculadora.getNroInstancias());
+		new Calculadora("");
+		mostrarMensaje("Instancias: " + Calculadora.getNroInstancias());
+		mostrarMensaje("Instancias: " + new Calculadora("").getNroInstancias());
+		mostrarMensaje("Instancias: " + c.getNroInstancias());
+		
 		boolean ejecutar = true;
 		double nro1;
 		double nro2;
@@ -21,28 +28,31 @@ public class App {
 			
 			switch (opcion) {
 			case 0:
-				nro1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 1"));
-				nro2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 2"));
+				int cuantosNumeros = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos números desea sumar?"));
+				double[] numeros = new double[cuantosNumeros];
+				for (int i = 0; i < cuantosNumeros; i++) {
+					numeros[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero " + (i+1)));
+				}
 				
-				mostrarMensaje("Resultado: " + calculadora.sumar(nro1, nro2));
+				mostrarMensaje("Resultado: " + Calculadora.sumar(numeros));
 				break;
 			case 1:
 				nro1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 1"));
 				nro2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 2"));
 				
-				mostrarMensaje("Resultado: " + calculadora.restar(nro1, nro2));
+				mostrarMensaje("Resultado: " + Calculadora.restar(nro1, nro2));
 				break;
 			case 2:
 				nro1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 1"));
 				nro2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 2"));
 				
-				mostrarMensaje("Resultado: " + calculadora.multiplicar(nro1, nro2));
+				mostrarMensaje("Resultado: " + Calculadora.multiplicar(nro1, nro2));
 				break;
 			case 3:
 				nro1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 1"));
 				nro2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el numero 2"));
 				
-				mostrarMensaje("Resultado: " + calculadora.dividir(nro1, nro2));
+				mostrarMensaje("Resultado: " + Calculadora.dividir(nro1, nro2));
 				break;
 			default:
 				ejecutar = false;
