@@ -1,22 +1,29 @@
 package co.poobike.dominio;
 
 public class Bicicleta {
+	private static final String MARCA_ESTANDAR = "GW";
+	private static final String COLOR_ESTANDAR = "BLANCA";
+	private static int contadorDeBicis = 0;
+	private String serial;
+	private String marca;
 	private String color;
-	private String serial;	
 	private double velocidad;	
 	private int nroCambio;
 	private double cadencia;
 	
 	public Bicicleta() {
-		this("0", "NINGUNO");
+		this(MARCA_ESTANDAR, COLOR_ESTANDAR);
 	}
 	
-	public Bicicleta(String serial) {
-		this(serial, "NINGUNO");
+	public Bicicleta(String marca) {
+		this(marca, COLOR_ESTANDAR);
 	}
 	
-	public Bicicleta(String serial, String color) {
-		this.serial = serial;
+	public Bicicleta(String marca, String color) {		
+		Bicicleta.contadorDeBicis++;
+		
+		this.serial = "POO" + Bicicleta.contadorDeBicis;
+		this.marca = marca;
 		this.color = color;
 	}
 	
@@ -64,15 +71,7 @@ public class Bicicleta {
 		return velocidad;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public String getMarca() {
+		return marca;
+	}
 }
