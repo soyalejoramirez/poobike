@@ -4,10 +4,21 @@ public class BicicletaConCambios extends Bicicleta {
 	private int nroCambio;
 	
 	public void frenar(double decremento) {
-		if(decremento > this.velocidad) {
+		if(decremento > super.velocidad) {
 			System.out.println("No puede frenar más de la velocidad a la que va");
 		} else {			
 			this.velocidad -= decremento;
+		}
+	}
+	
+	@Override
+	public void acelerar(double incremento) {
+		if(this instanceof BicicletaDeRuta) {			
+			System.out.println("No hago nada porque es de Ruta");
+			super.acelerar(incremento);
+		} else {
+			System.out.println("Acelerando con Cambios");
+			super.acelerar(incremento * 1.5);
 		}
 	}
 	

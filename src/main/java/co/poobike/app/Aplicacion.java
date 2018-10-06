@@ -3,7 +3,6 @@ package co.poobike.app;
 import java.util.ArrayList;
 
 import co.poobike.dominio.Bicicleta;
-import co.poobike.dominio.BicicletaConCambios;
 import co.poobike.dominio.BicicletaCross;
 import co.poobike.dominio.BicicletaDeMontana;
 import co.poobike.dominio.BicicletaDeRuta;
@@ -12,17 +11,19 @@ public class Aplicacion {
 	public static void main(String[] args) {
 		ArrayList<Bicicleta> bicicletas = new ArrayList<>();
 		
-		BicicletaCross bici = new BicicletaCross();
+		BicicletaDeRuta bici = new BicicletaDeRuta();
 		BicicletaDeMontana mtb = new BicicletaDeMontana();
-		BicicletaDeRuta rutera = new BicicletaDeRuta();
+		BicicletaCross cross = new BicicletaCross();
+//		Bicicleta bici = new BicicletaCross(); // Upcasting
+//		BicicletaDeMontana mtb = (BicicletaDeMontana) new Bicicleta(); //Downcasting
 
 		bicicletas.add(bici);
 		bicicletas.add(mtb);
-		bicicletas.add(rutera);
+		bicicletas.add(cross);
 		
 		for (Bicicleta bicicleta : bicicletas) {
-			if(bicicleta instanceof BicicletaConCambios) {
-				System.out.println(bicicleta);
+			if(bicicleta instanceof Bicicleta) {
+				System.out.println(bicicleta.toString());
 			}
 		}
 		

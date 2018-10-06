@@ -30,6 +30,8 @@ public class Bicicleta {
 	}
 	
 	public void acelerar(double incremento) {
+		System.out.println("Acelerando Bici...");
+		
 		if(incremento < 1) {
 			System.out.println("El incremento no puede ser menor que 1");
 		} else {			
