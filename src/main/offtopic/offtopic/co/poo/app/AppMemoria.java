@@ -32,7 +32,7 @@ public class AppMemoria {
 		Bicicleta bici;
 		System.out.println("Memoria antes del ciclo: " + Runtime.getRuntime().freeMemory());
 		for (int i = 0; i < 999899999; i++) {
-			bici = new Bicicleta("21335456f", "Negra");
+			bici = new Bicicleta("Trek", 3160000);
 		}
 		System.out.println("Memoria DESPUÉS del ciclo: " + Runtime.getRuntime().freeMemory());
 		System.gc();

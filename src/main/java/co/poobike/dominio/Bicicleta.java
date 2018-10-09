@@ -9,50 +9,24 @@ public class Bicicleta {
 	private String 	marca;
 	private String 	color;
 	private String 	materialDelMarco;
-	private double	talla; 	
-	protected double 	velocidad;
-	private double 	cadencia;
+	private double	talla;
+	private int valor;
 	
-	public Bicicleta() {
-		this(MARCA_DEFAULT, COLOR_DEFAULT);
+	public Bicicleta(int valor) {
+		this(MARCA_DEFAULT, COLOR_DEFAULT, valor);
 	}
 	
-	public Bicicleta(String marca) {
-		this(marca, COLOR_DEFAULT);
+	public Bicicleta(String marca, int valor) {
+		this(marca, COLOR_DEFAULT, valor);
 	}
 	
-	public Bicicleta(String marca, String color) {		
+	public Bicicleta(String marca, String color, int valor) {		
 		Bicicleta.contadorDeBicis++;
 		
 		this.serial = "POO" + Bicicleta.contadorDeBicis;
 		this.marca = marca;
 		this.color = color;
-	}
-	
-	public void acelerar(double incremento) {
-		System.out.println("Acelerando Bici...");
-		
-		if(incremento < 1) {
-			System.out.println("El incremento no puede ser menor que 1");
-		} else {			
-			this.velocidad += incremento;
-		}
-	}
-
-//	public void frenar(double decremento) {
-//		if(decremento > this.velocidad) {
-//			System.out.println("No puede frenar más de la velocidad a la que va");
-//		} else {			
-//			this.velocidad -= decremento;
-//		}
-//	}
-
-	public double getCadencia() {
-		return cadencia;
-	}
-
-	public void setCadencia(double cadencia) {
-		this.cadencia = cadencia;
+		this.valor = valor;
 	}
 
 	public String getColor() {
@@ -63,10 +37,6 @@ public class Bicicleta {
 		return serial;
 	}
 
-	public double getVelocidad() {
-		return velocidad;
-	}
-	
 	public String getMarca() {
 		return marca;
 	}
@@ -85,5 +55,13 @@ public class Bicicleta {
 	
 	public double getTalla() {
 		return talla;
+	}
+	
+	public int getValor() {
+		return valor;
+	}
+	
+	public void setValor(int valor) {
+		this.valor = valor;
 	}
 }
