@@ -30,9 +30,9 @@ public class Aplicacion {
 		
 		for (Bicicleta bicicleta : bicicletasAVender) {
 			if(bicicleta.getValor() > 2000000) {
-				facturas.add(new FacturaConIva(bicicleta.getValor()));
+				facturas.add(new FacturaConIva(bicicleta.getValor(), "online"));
 			} else {
-				facturas.add(new FacturaSinIva(bicicleta.getValor()));
+				facturas.add(new FacturaSinIva(bicicleta.getValor(), "fisica"));
 			}
 		}
 		
