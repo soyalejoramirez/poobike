@@ -9,6 +9,10 @@ import co.poobike.dominio.Bicicleta;
 import co.poobike.dominio.BicicletaCross;
 import co.poobike.dominio.BicicletaDeMontana;
 import co.poobike.dominio.BicicletaDeRuta;
+import co.poobike.facturacion.DescuentoDirectivo;
+import co.poobike.facturacion.DescuentoEmpleado;
+import co.poobike.facturacion.DescuentoFisico;
+import co.poobike.facturacion.DescuentoOnline;
 import co.poobike.facturacion.Factura;
 import co.poobike.facturacion.FacturaConIva;
 import co.poobike.facturacion.FacturaSinIva;
@@ -29,10 +33,10 @@ public class Aplicacion {
 		bicicletasAVender.add(cross);
 		
 		for (Bicicleta bicicleta : bicicletasAVender) {
-			if(bicicleta.getValor() > 2000000) {
-				facturas.add(new FacturaConIva(bicicleta.getValor(), "online"));
+			if(bicicleta.getValor() > 4000000) {
+				facturas.add(new FacturaConIva(bicicleta.getValor()));
 			} else {
-				facturas.add(new FacturaSinIva(bicicleta.getValor(), "fisica"));
+				facturas.add(new FacturaSinIva(bicicleta.getValor()));
 			}
 		}
 		
@@ -43,6 +47,12 @@ public class Aplicacion {
 		double total = 0;
 		
 		for (Factura factura : facturas) {
+			System.out.println("Factura de " + factura.getValor() + " SIN descuento: " + factura.getTotal());
+			System.out.println("Factura de " + factura.getValor() + " CON descuento fisico: " + factura.getTotal(new DescuentoFisico()));
+			System.out.println("Factura de " + factura.getValor() + " CON descuento online: " + factura.getTotal(new DescuentoOnline()));
+			System.out.println("Factura de " + factura.getValor() + " CON descuento empleado: " + factura.getTotal(new DescuentoEmpleado()));
+			System.out.println("Factura de " + factura.getValor() + " CON descuento directivo: " + factura.getTotal(new DescuentoDirectivo()) + "\n");
+			
 			total += factura.getTotal();
 		}
 		
