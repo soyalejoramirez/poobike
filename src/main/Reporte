@@ -1,0 +1,12 @@
+Buenas, le saluda el grupo 7 de la clase de diseño de software de la universidad ESPOL.
+Hemos encontrado un error de patrones de diseño en su repositorio y nuestra tarea era modificar el proyecto a tal punto de que siga dichos patrones.
+
+Se utilizo un patrón builder en las clases de factura debido a que hay 2 objetos q se crean con los mismo atributos, 
+pero ambos poseen diferentes funcionalidades por lo cual este patrón cubre toda las necesidades, 
+ya que si en algún futuro se desea implementar algún otro tipo de factura se ahorran recursos en su creación. 
+
+Se utilizó el patrón decorate en la clase bicicleta debido a que una misma bicicleta se le puede añadir otras funcionalidades, de este modo se ahorra recursos en su creación y 
+deja abierto a la creación de diversas funcionalidades de una bicicleta en un futuro. 
+
+Se empleo el patrón strategy en el aparto de descuento debido a que de este modo se pueden escoger diversos métodos para hacer la misma funcionalidad,
+de este modo el usuario puede escoger el método q mejor le convenga sin la necesidad de tener la necesidad de duplicar el código 
